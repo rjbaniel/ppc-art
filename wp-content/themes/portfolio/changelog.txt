@@ -1,0 +1,143 @@
+v1.1.2 (Jan 30, 2017)
+-----------------------------
+- Added filter `portfolio_sortbutton_get_terms_args` to customize the tags-list on the homepage
+
+Files updated:
+- functions.php
+- functions/portfolio.php
+- style.css
+
+v1.1.1 (Jan 13, 2017)
+-----------------------------
+- One click demo importer improvements
+
+Files updated:
+- style.css
+- functions.php
+- options/demo-importer/
+
+
+v1.1.0 (Oct 22, 2016)
+-----------------------------
+- One click demo importer improvements
+- Install Plugins page improvements
+
+Files updated:
+- style.css
+- functions.php
+- theme-presets.php
+- options/
+- lang/
+- functions/plugin-activation.php
+
+
+v1.0.9 (Sep 29, 2016)
+-----------------------------
+- Added one click demo importer
+- Updated image upload option field
+- Updated language files
+
+Files updated:
+- style.css
+- functions.php
+- theme-presets.php
+- options/
+- lang/
+
+
+v1.0.8 (July 25, 2016)
+-----------------------------
+- Fix: author name not properly showing
+
+Files updated:
+- style.css
+- functions.php
+
+v1.0.7 (Apr 26, 2016)
+-----------------------------
+- Compatibility with Wordpress 4.5
+
+Files updated:
+- style.css
+- functions.php
+- js/customscript.js
+
+v1.0.6 (Mar 18, 2016)
+-----------------------------
+- Updated code on Recommended plugins page
+
+Files updated:
+- style.css
+- functions/plugin-activation.php
+- css/addons.css
+
+
+v1.0.5 (Mar 11, 2016)
+-----------------------------
+- Recommended plugins page changes
+
+Files updated:
+- style.css
+- functions.php
+- functions/plugin-activation.php
+- css/addons.css
+
+
+v1.0.4 (Feb 8, 2016)
+-----------------------------
+- Added recommended plugins page
+
+Files changed:
+- style.css
+- functions/plugin-activation.php
+- css/addons.css
+- js/addons.js
+
+
+v1.0.3 (May 24, 2015)
+----------------------------
+- Fixed H1 was not displaying the tag name
+
+Files updated:
+- archive.php
+- style.css
+
+
+v1.0.2 (Mar 22, 2015)
+----------------------------
+- Fixed portfolio pagination issue
+- Added image placeholders to homepage grid
+- Fixed some PHP warnings and minor issues
+
+Files updated:
+- functions/portfolio.php
+- functions/widget-authorposts.php
+- functions/widget-catposts.php
+- functions/widget-postslider.php
+- functions/widget-recentposts.php
+- functions/widget-relatedposts.php
+- archive.php
+- comments.php
+- footer.php
+- functions.php
+- header.php
+- index.php
+- style.css
+
+
+v1.0.1 (Sep 15, 2014)
+----------------------------
+- Fixed portfolio images overlapping
+- Fixed error message when no footer icons are set
+- Removed unnecessary options.
+- Added width & height attributes for images to improve performance
+
+Files updated:
+- style.css
+- functions/theme-actions.php
+- js/ajax.js
+
+
+v1.0 (Sep 14, 2014)
+----------------------------
+- Theme Released
