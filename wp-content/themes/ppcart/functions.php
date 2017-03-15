@@ -22,7 +22,6 @@ add_action( 'add_meta_boxes_portfolio', 'ppcart__add_artist_meta_box_for_post' )
 function ppcart__artist_meta_box( $post ) {
 	wp_enqueue_script( 'awesomplete', get_stylesheet_directory_uri() . '/lib/awesomplete.js', array(), '1.0', true );
 	wp_enqueue_style( 'awesomplete', get_stylesheet_directory_uri() . '/lib/awesomplete.css', array(), '1.0', 'screen' );
-	wp_enqueue_script( 'ppcart-artist-metabox', get_stylesheet_directory_uri() . '/js/ppcart-artist-metabox.js', array(), '1.0', true );
 	wp_localize_script(
 		'ppcart-artist-metabox',
 		'ajax_object',
