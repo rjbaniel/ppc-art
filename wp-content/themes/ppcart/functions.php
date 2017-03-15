@@ -83,6 +83,9 @@ function ppcart__get_artists_list() {
 	foreach( $artists as $artist )
 		$artist_names[] = $artist->post_title;
 	$artists_list = implode( ', ', $artist_names);
+	if ( count( $artist_names ) == 1 ) {
+		$artists_list .= ',';
+	}
 	return $artists_list;
 }
 
