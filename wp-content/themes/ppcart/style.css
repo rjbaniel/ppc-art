@@ -23,16 +23,68 @@ p, li, blockquote {
 	max-width: 30em;
 }
 
+h1, h2, h3, h4, h5, h6, h7, h8 {
+	font-family: 'Kreon',serif;
+}
+
+h1 {
+	font-size: 6.854em;
+}
+
+h2 {
+	font-size: 4.236em;
+}
+
+h3 {
+	font-size: 2.618em;
+}
+
+h4 {
+	1.618em;
+}
+
+h5 {
+	1em;
+}
+
+h6 {
+	.618em;
+}
+
+h7 {
+	.382em;
+}
+
+h8 {
+	.236em;
+}
+
 /**-----------------------------------------
  # General layout
  ----------------------------------------**/
-.main-container {
-	max-width: 60rem;
+body:not(.home) .main-container {
+	max-width: 65rem;
 	margin: 0 auto;
 }
+.main-header {
+	padding: 0;
+	margin: 4rem auto;
+}
+body.home .main-header {
+	max-width: 65rem;
+}
+body:not(.home) .container {
+	max-width: none;
+	width: auto;
+	margin: auto 1rem;
+}
 
-.container {
-	max-width: 100%;
+@media (min-width: 65rem) {
+	body:not(.home) .container {
+		width: auto;
+		max-width: 100%;
+		margin: auto;
+	}
 }
 
 /**-----------------------------------------
@@ -55,6 +107,7 @@ blockquote {
 	display: inline-block;
 	max-width: 20rem;
 	margin-right: auto;
+	margin-bottom: 0;
 }
 
 /* Bar that holds the non-logo nav items */
