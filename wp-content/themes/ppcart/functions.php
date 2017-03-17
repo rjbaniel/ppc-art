@@ -1,4 +1,11 @@
 <?php
+
+function ppcart__init() {
+	require_once( __DIR__ . '/includes/navigation.php' );
+	wp_enqueue_style( 'ppacart', get_stylesheet_uri(), array( 'stylesheet', 'responsive' ), '1.0', 'all' );
+}
+add_action( 'init', 'ppcart__init' );
+
 function ppcart__register_artist_cpt() {
 	$args = array(
 		'label'				=> 'Artists',
