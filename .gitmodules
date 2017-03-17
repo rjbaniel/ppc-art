@@ -1,0 +1,3 @@
+[submodule "wp-content/plugins/wp-css-only-lightboxes"]
+	path = wp-content/plugins/wp-css-only-lightboxes
+	url = https://github.com/rjbaniel/wp-css-only-lightboxes.git
