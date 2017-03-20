@@ -6,13 +6,16 @@
 					<div class="single_post">
 						<?php
 						$post_id = get_the_ID();
-						$single_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' );
-						$single_image = $single_image[0];
-						$single_image_url = bfi_thumb( $single_image, array( 'width' => '1090', 'height' => '450', 'crop' => true ) );
-						
-						if ( $single_image_url )
-							echo '<img src="'.$single_image_url.'" width="1090" height="450" class="single_featured">';
+						if ( get_post_meta( $post_id, 'ppcart-show-image', true ) ) {
+							$single_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' );
+							$single_image = $single_image[0];
+							$single_image_url = bfi_thumb( $single_image, array( 'width' => '1090', 'height' => '450', 'crop' => true ) );
+							
+							if ( $single_image_url )
+								echo '<img src="'.$single_image_url.'" width="1090" height="450" class="single_featured">';
+						}
 						?>
+						
 						<header class="post-header">
 							<h1 class="single-post-title" itemprop="headline"><?php the_title(); ?></h1>
 						</header><!--.headline_area-->

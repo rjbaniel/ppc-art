@@ -21,12 +21,12 @@ function ppcart__register_artist_cpt() {
 }
 add_action( 'init', 'ppcart__register_artist_cpt' );
 
-function ppcart__add_artist_meta_box_for_post() {
-	add_meta_box( 'ppc-artist', 'Artist', 'ppcart__artist_meta_box', 'portfolio', 'side' );
+function ppcart__add_meta_box_for_portfolio() {
+	add_meta_box( 'ppc-artist', 'Customize', 'ppcart__portfolio_meta_box', 'portfolio', 'side', 'low' );
 }
-add_action( 'add_meta_boxes_portfolio', 'ppcart__add_artist_meta_box_for_post' );
+add_action( 'add_meta_boxes_portfolio', 'ppcart__add_meta_box_for_portfolio' );
 
-function ppcart__artist_meta_box( $post ) {
+function ppcart__portfolio_meta_box( $post ) {
 	wp_enqueue_script( 'awesomplete', get_stylesheet_directory_uri() . '/lib/awesomplete.js', array(), '1.0', true );
 	wp_enqueue_style( 'awesomplete', get_stylesheet_directory_uri() . '/lib/awesomplete.css', array(), '1.0', 'screen' );
 	wp_localize_script(
@@ -40,12 +40,17 @@ function ppcart__artist_meta_box( $post ) {
 		$current_artist = get_post( $current_value );
 		$current_artist_name = $current_artist->post_title;
 	}
+
+	$show_image = '';
+	if ( get_post_meta( $post->ID, 'ppcart-show-image', true ) )
+		$show_image = 'checked';
+
 	?>
-	<label for="ppc-art">Artist name:</label>
+	<label for="ppcart-artist">Artist name:</label>
 	<input
 		class="widefat awesomplete"
 		name="ppcart-artist"
-		id="ppc-art"
+		id="ppcart-artist"
 		type="text"
 		value="<?php echo esc_attr( $current_artist_name ); ?>"
 		<?php
@@ -55,18 +60,24 @@ function ppcart__artist_meta_box( $post ) {
 		}
 		?>
 	>
+
+	<br><br>
+
+	<input type="checkbox" id="ppcart-show-image" name="ppcart-show-image" <?php echo esc_attr( $show_image ); ?>>
+	<label for="ppcart-show-image">Show featured image on portfolio item page?</label>
+
 	<?php
-	wp_nonce_field( 'ppcart-save-artist', 'ppcart-artist-nonce' );
+	wp_nonce_field( 'ppcart-save-portfolio', 'ppcart-portfolio-nonce' );
 }
 
-function ppcart__save_artist( $post_id ) {
+function ppcart__save_portfolio( $post_id ) {
 	if ( get_post_type( $post_id ) != 'portfolio' )
 		return; 
 
-	if ( ! isset( $_POST['ppcart-artist'] ) )
+	if ( ! isset( $_POST['ppcart-artist'] ) && ! isset( $_POST['ppcart-show-image'] ) )
 		return;
 
-	if ( isset( $_POST['ppcart-artist-nonce'] ) && ! wp_verify_nonce( $_POST['ppcart-artist-nonce'], 'ppcart-save-artist' ) )
+	if ( isset( $_POST['ppcart-portfolio-nonce'] ) && ! wp_verify_nonce( $_POST['ppcart-portfolio-nonce'], 'ppcart-save-portfolio' ) )
 		wp_die( 'Sorry, we weren\'t able to verify your request.' );
 
 	$artists = ppcart__get_artists();
@@ -75,10 +86,12 @@ function ppcart__save_artist( $post_id ) {
 		if ( $artist->post_title == $_POST['ppcart-artist'] )
 			$added_artist = $artist->ID;
 	}
-
 	update_post_meta( $post_id, 'ppcart-artist', $added_artist );
+
+	$show_image = isset( $_POST['ppcart-show-image'] );
+	update_post_meta( $post_id, 'ppcart-show-image', $show_image);
 }
-add_action( 'save_post', 'ppcart__save_artist' );
+add_action( 'save_post', 'ppcart__save_portfolio' );
 
 function ppcart__get_artists_list() {
 	$artists = ppcart__get_artists();
