@@ -9,8 +9,19 @@
 /**-----------------------------------------
  # Typography
  ----------------------------------------**/
+
 :root {
-	font-size: 18px;
+	font-size: 16px;
+}
+@media(min-width: 56em ) {
+	:root {
+		font-size: 18px;
+	}
+}
+
+
+body {
+	font-size: 1rem;
 }
 
 p, li, input, textarea, pre, blockquote,
@@ -19,8 +30,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, .content-section, ul:not(.navigation-list), input, textarea, pre, 
-blockquote {
-	margin: 0 0 1rem 0;
+blockquote,
+.portfolio-tags {
+	margin: 0 0 1.5rem 0;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -35,34 +47,28 @@ p, .content-section, li:not(.navigation-list__item), blockquote {
 	max-width: 32em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	line-height: 1.1;
+h1, .page-heading,
+h2, h3, h4, h5, h6 {
 	margin: 0 0 .5rem 0;
 }
 
-h1 {
-	font-size: 4.236em;
+h1,
+.page-heading,
+.site-heading .page-heading,
+.post-header .single-post-title {
+	font-size: 3.375rem;
+	line-height: 3.5rem;
 }
 
-h2 {
-	font-size: 2.618em;
+h2,
+.ajax_project > .project_description > h2.title {
+	font-size: 2.25rem;
+	line-height: 2.5rem;
 }
 
 h3 {
-	font-size: 1.618em;
-}
-
-h4 {
-	font-size: 1em;
-}
-
-h5 {
-	font-size: .618em;
-}
-
-h6 {
-	font-size: .618em;
-	font-style: italic;
+	font-size: 1.5rem;
+	line-height: 1.5rem;
 }
 
 ul:not(.navigation-list) {
@@ -78,7 +84,10 @@ body:not(.home) .main-container {
 }
 .main-header {
 	padding: 0;
-	margin: 0 auto 4rem;
+	margin: 0 auto 3rem;
+}
+.site-heading {
+	margin: 0 0 3rem;
 }
 body.home .main-header {
 	max-width: 65rem;
@@ -95,6 +104,15 @@ body:not(.home) .container {
 		max-width: 100%;
 		margin: auto;
 	}
+}
+
+.sort_by_cat {
+	margin-bottom: 1.5rem;
+}
+
+ul.sort_list,
+.sort_list li {
+	margin: 0;
 }
 
 /**-----------------------------------------
@@ -135,7 +153,8 @@ blockquote {
 	display: block;
 }
 .navigation-list__not-home .navigation-list__item-link {
-	padding: .5rem 0;
+	padding: .5rem 0 .25rem;
+	letter-spacing: .03rem;
 	text-transform: uppercase;
 	color: rgb(102, 102, 102);
 }
@@ -193,6 +212,7 @@ blockquote {
 	.navigation-list__not-home .navigation-list__item-link {
 		position: relative;
 		top: 50%;
+		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
 	}
 }
