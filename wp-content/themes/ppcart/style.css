@@ -18,7 +18,8 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-p, ul:not(.navigation-list), input, textarea, pre, blockquote {
+p, .content-section, ul:not(.navigation-list), input, textarea, pre, 
+blockquote {
 	margin: 0 0 1rem 0;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -30,7 +31,7 @@ li:not(.navigation-list__item) {
 	line-height: 1.5;
 }
 
-p, li:not(.navigation-list__item), blockquote {
+p, .content-section, li:not(.navigation-list__item), blockquote {
 	max-width: 32em;
 }
 
