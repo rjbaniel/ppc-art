@@ -130,6 +130,15 @@ ul.sort_list,
 /**-----------------------------------------
  # Common components
  ----------------------------------------**/
+a:not(.navigation-list__item-link) {
+	text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+
 blockquote {
 	padding: 1rem;
 	border: none;
