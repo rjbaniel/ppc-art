@@ -30,8 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, .content-section, ul:not(.navigation-list), input, textarea, pre, 
-blockquote,
-.portfolio-tags {
+blockquote {
 	margin: 0 0 1.5rem 0;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -66,9 +65,9 @@ h2,
 	line-height: 2.5rem;
 }
 
-h3 {
+h3, .page-subheading {
 	font-size: 1.5rem;
-	line-height: 1.5rem;
+	line-height: 1.75rem;
 }
 
 ul:not(.navigation-list) {
@@ -106,6 +105,7 @@ body:not(.home) .container {
 	}
 }
 
+/* Homepage */
 .sort_by_cat {
 	margin-bottom: 1.5rem;
 }
@@ -115,6 +115,18 @@ ul.sort_list,
 	margin: 0;
 }
 
+.portfolio-grid > .portfolio-loader {
+	display: none !important;
+}
+
+.sort_by_cat .sort_list li a {
+	font-size: 1rem;
+}
+
+.portfolio-tags {
+	display: none;
+}
+
 /**-----------------------------------------
  # Common components
  ----------------------------------------**/
@@ -122,6 +134,10 @@ blockquote {
 	padding: 1rem;
 	border: none;
 	box-shadow: none;
+}
+
+.lightbox-download > a {
+	color: white;
 }
 
 /**-----------------------------------------
@@ -154,7 +170,7 @@ blockquote {
 }
 .navigation-list__not-home .navigation-list__item-link {
 	padding: .5rem 0 .25rem;
-	letter-spacing: .03rem;
+	letter-spacing: .02rem;
 	text-transform: uppercase;
 	color: rgb(102, 102, 102);
 }
