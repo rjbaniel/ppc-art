@@ -168,8 +168,9 @@ blockquote {
 	margin-top: .5rem;
 }
 .navigation-list__item:not(.navigation-list__item--home) {
-	margin: 0 auto;
 	max-width: 20rem;
+	height: 100%;
+	margin: 0 auto;
 }
 .navigation-list__item:not(.navigation-list__item--home):not(:last-child) {
 	border-bottom: .15rem solid black;
