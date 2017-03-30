@@ -143,10 +143,15 @@ blockquote {
 	padding: 1rem;
 	border: none;
 	box-shadow: none;
+	font-weight: normal;
 }
 
 .lightbox-download > a {
 	color: white;
+}
+
+.postauthor .avatar {
+	margin: 0 1rem 0 0;
 }
 
 /**-----------------------------------------
