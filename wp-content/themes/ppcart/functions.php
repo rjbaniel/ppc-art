@@ -6,6 +6,13 @@ function ppcart__init() {
 }
 add_action( 'init', 'ppcart__init' );
 
+function ppcart__maybe_load_home_js(){
+	global $wp_query;
+	if ( empty( $wp_query->query ) )
+		wp_enqueue_script( 'art4ppc-home', get_stylesheet_directory_uri() . '/homepage.js', array( 'mts_ajax' ), 1.0, true );
+}
+add_action( 'template_redirect', 'ppcart__maybe_load_home_js' );
+
 function ppcart__register_artist_cpt() {
 	$args = array(
 		'label'				=> 'Artists',
