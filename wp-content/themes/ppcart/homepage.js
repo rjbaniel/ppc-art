@@ -1,21 +1,18 @@
 if (typeof mts_ajax_loadposts !== 'undefined') {
-
-var sort_links = document.querySelectorAll('.sort_list > li > a');
-console.log(sort_links);
-for (var i = 0; i < sort_links.length; i++) {
-	sort_links[i].addEventListener('click', load_more_posts);
-}
-}
-
-function load_more_posts() {
+	var sort_links = document.querySelectorAll('.sort_list > li > a');
 	var pageNum = parseInt(mts_ajax_loadposts.startPage, 10) + 1;
 	var max = parseInt(mts_ajax_loadposts.maxPages, 10);
 	var nextLink = mts_ajax_loadposts.nextLink;
 	var autoLoad = mts_ajax_loadposts.autoLoad;
+	for (var i = 0; i < sort_links.length; i++) {
+		sort_links[i].addEventListener('click', load_more_posts);
+	}
+}
+
+function load_more_posts() {
 	var loadPostsLink = document.querySelector('#load-posts a');
-	if (pageNum == max+1) {
-		loadPostsLink.innerHTML = '<i class="fa fa-ban"></i>' + mts_ajax_loadposts.i18n_nomore;
-		loadPostsLink.classList.add('disabled');
+	if (loadPostsLink.classList.contains('disabled')) {
+		return;
 	}
 	if(pageNum <= max && !loadPostsLink.classList.contains('loading')) {
 		loadPostsLink.innerHTML = '<i class="fa fa-refresh fa-spin"></i>' + mts_ajax_loadposts.i18n_loading;
